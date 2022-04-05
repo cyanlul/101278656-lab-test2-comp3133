@@ -1,0 +1,30 @@
+<div *ngIf='mission'>
+  <div mat-subheader style="font-size: 15px;">SpaceX Mission Launch List</div>
+  <div style="background-color: rgb(117, 117, 158); text-align:left; vertical-align: middle; padding:20px 47px;">
+    <img mat-card-image style="width: 200px" src="{{mission.links.mission_patch_small}}">
+    <hr />
+    <h2><strong>Mission - </strong>{{mission.mission_name}}</h2>
+    <h3>Name: {{mission.mission_name}}</h3>
+    <h3>Launch Year: {{mission.launch_year}}</h3>
+    <h2><strong>Rocket </strong></h2>
+    <h3>Name: {{mission.rocket.rocket_name}}</h3>
+    <h2><strong>Launch Site </strong></h2>
+    <h3>Name: {{mission.launch_site.site_name_long}}</h3>
+    <h2><strong>Launch Details</strong></h2>
+    <h3>{{mission.details}} </h3>
+    <h2><strong>More Info on Launch Details</strong></h2>
+    <div style="margin-top: -10px;">
+      <a href="{{mission.links['article_link']}}">
+        <mat-icon>assignment</mat-icon>
+      </a>
+      <a href="{{mission.links['wikipedia']}}">
+        <mat-icon>public</mat-icon>
+      </a>
+      <a href="{{mission.links['video_link']}}">
+        <mat-icon>videocam</mat-icon>
+      </a>
+    </div>
+
+    <button (click)="goBack()" mat-button>Go Back</button>
+  </div>
+</div>

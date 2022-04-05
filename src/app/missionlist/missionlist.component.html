@@ -1,0 +1,18 @@
+<div mat-subheader style="font-size: 15px;">SpaceX Mission Launch List</div>
+<mat-selection-list dense [multiple]="false">
+  <div>
+    <mat-list-option *ngFor='let mission of missions'
+      style="background-color: rgb(117, 117, 158); text-align:left; vertical-align: middle; padding:20px 47px;"
+      routerLink="/details/{{mission.flight_number}}">
+      <mat-icon mat-list-icon> <img mat-card-image style="width: 50px; margin-left: -10px;"
+          src="{{mission.links.mission_patch_small}}">
+      </mat-icon>
+      <div style="margin-left: 15px; margin-top: 40px;">
+        <div mat-line style="font-size: 15px;">{{mission.mission_name}}</div>
+        <div mat-line style="font-size: 15px;">{{mission.launch_year}}</div>
+        <div mat-line style="font-size: 15px;">{{mission.details}}</div>
+        <hr />
+      </div>
+    </mat-list-option>
+  </div>
+</mat-selection-list>
